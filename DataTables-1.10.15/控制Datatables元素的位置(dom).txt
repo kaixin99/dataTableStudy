@@ -1,0 +1,73 @@
+
+为了适应我们所说的这些情况，已经考虑到了，所以有这么强大的dom属性。
+那么定义了如下字母：
+
+l - Length changing 改变每页显示多少条数据的控件
+
+f - Filtering input 即时搜索框控件
+
+r - pRocessing 加载等待显示信息
+
+t - The Table 表格本身
+
+i - Information 表格相关信息控件
+
+p - Pagination 分页控件
+
+
+< > - div elements 代表一个div元素 <div><div>
+<"#id" > - div with an id 指定了id的div元素 <div id='id'><div>
+<"class" > - div with a class 指定了样式名的div元素 <div class='class'><div>
+<"#id.class" > - div with an id and class 指定了id和样式的div元素 <div id='id' class='class'><div>
+
+
+这些字母你可以理解为一个标签，datatables会自动把这些字母替换成相应的控件，就想模板一样。
+上面的这些元素 l、f、t、i、p、r除了t只能指定一次，其他的均可多次指定。
+
+
+把Datatables所有的控件放在我自己定义的class的div里:
+<div class="wrapper">
+  {filter}
+  {length}
+  {information}
+  {pagination}
+  {table}
+</div>
+
+$('#example').dataTable({
+  "dom": '<"wrapper"flipt>'
+});
+
+观察发现：dom的语法含义：
+1、使用单字母表示一个datatable的控件，如：f表示{filter},l表示{length}
+2、使用尖括号<> 表示一个div标签。
+3、使用引号表示元素的属性。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
